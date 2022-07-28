@@ -68,6 +68,18 @@ services:
         networks: 
             - laravel-9
 
+    # mailhog
+    mailhog:
+        container_name: especializati-mailhog
+        image: mailhog/mailhog
+        logging: 
+            driver: 'none'
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+        networks:
+            - laravel-9
+
 networks: 
     laravel-9:
         driver: bridge
